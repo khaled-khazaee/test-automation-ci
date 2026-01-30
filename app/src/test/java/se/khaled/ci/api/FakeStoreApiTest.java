@@ -2,9 +2,11 @@ package se.khaled.ci.api;
 
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledIfEnvironmentVariable;
 
 import static io.restassured.RestAssured.given;
 
+@DisabledIfEnvironmentVariable(named = "CI", matches = "true")
 public class FakeStoreApiTest {
 
   @Test
